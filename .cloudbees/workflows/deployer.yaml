@@ -1,7 +1,6 @@
 apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
 name: deployer
-
 on:
   workflow_call:
     inputs:
@@ -11,7 +10,7 @@ on:
       manifest:
         type: string
         required: true
-
+  workflow_dispatch:
 jobs:
   demo-go-service-demo-go-service-sv-gha-2:
     if: ${{ fromJSON(inputs.manifest)['demo-go-service']['demo-go-service-sv-gha-2'].deploy }}
